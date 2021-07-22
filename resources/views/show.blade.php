@@ -6,13 +6,13 @@
             {{ Illuminate\Mail\Markdown::parse($post->content) }}
         </article>
         <div class=" border-t-2 my-6">
-            @if (isset($comments))
-                @foreach ($comments ?? '' as $comment)
+            @if (!$post->comments->isempty())
+                @foreach ($post->comments as $comment)
                     <span class="font-bold">{{ $comment->author }}</span>
                     <span>{{ $comment->content }}</span>
                 @endforeach
             @else
-                <span class="font-extralight">No comment yet</span>
+                <span class="font-extralight">No comments yet: be the first!</span>
             @endif
         </div>
     </div>

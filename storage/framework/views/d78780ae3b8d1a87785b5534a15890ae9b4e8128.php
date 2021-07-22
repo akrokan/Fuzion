@@ -4,7 +4,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes([]); ?>
-
+<?php var_dump($post->comments); ?>
     <div class="max-w-prose mx-auto">
         <article>
             <h1><?php echo e($post->title); ?></h3>
@@ -12,13 +12,13 @@
 
         </article>
         <div class=" border-t-2 my-6">
-            <?php if(isset($comments)): ?>
-                <?php $__currentLoopData = $comments ?? ''; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if(!$post->comments->isempty()): ?>
+                <?php $__currentLoopData = $post->comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <span class="font-bold"><?php echo e($comment->author); ?></span>
                     <span><?php echo e($comment->content); ?></span>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php else: ?>
-                <span class="font-extralight">No comment yet</span>
+                <span class="font-extralight">No comments yet: be the first!</span>
             <?php endif; ?>
         </div>
     </div>

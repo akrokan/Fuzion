@@ -15,7 +15,7 @@
         <tbody>
             <?php $__currentLoopData = $comments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>          
             <tr>
-                <td class="px-2 py-2"><?php echo e($comment->name); ?></td>
+                <td class="px-2 py-2"><?php echo e($comment->content); ?></td>
                 <td class="px-2 py-2"></<td>
             </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

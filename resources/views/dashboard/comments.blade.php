@@ -10,7 +10,7 @@
         <tbody>
             @foreach ($comments as $comment)          
             <tr>
-                <td class="px-2 py-2">{{ $comment->name }}</td>
+                <td class="px-2 py-2">{{ $comment->content }}</td>
                 <td class="px-2 py-2"></<td>
             </tr>
             @endforeach
