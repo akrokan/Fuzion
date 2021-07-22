@@ -15,6 +15,9 @@ function OnInput() {
   this.style.height = (this.scrollHeight) + "px";
 }*/
 
+/*
+  Recover *** from Markdown parsing
+*/
 while(hr = document.querySelector('hr')) {
   center = document.createElement("center");
   content = document.createTextNode("***");
