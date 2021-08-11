@@ -1,15 +1,15 @@
 <header class="flex justify-between items-center py-4 bg-white shadow">
-<div class="container mx-auto">
+<div class="container mx-auto" x-data="">
 
     <nav class="flex">
-        <a href="{{ route('home') }}" class="mr-6">Home</a>
-        <a href="{{ route('blog') }}" class="mr-6">Blog</a>
+        <a href="{{ route('home') }}"    class="mr-6">Home</a>
+        <a href="{{ route('blog') }}"    class="mr-6">Blog</a>
         <a href="{{ route('contact') }}" class="mr-6">Contact</a>
         @guest
-            <a href="{{ route('login') }}" class="mr-6">Login</a>
+            <a href="{{ route('login') }}"    class="mr-6">Login</a>
             <a href="{{ route('register') }}" class="mr-6">Register</a>
         @else
-            <a href="{{ route('logout') }}" class="mr-6" 
+            <a href="{{ route('logout') }}"     class="mr-6" 
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display:none">@csrf</form>

@@ -1,15 +1,15 @@
 <header class="flex justify-between items-center py-4 bg-white shadow">
-<div class="container mx-auto">
+<div class="container mx-auto" x-data="">
 
     <nav class="flex">
-        <a href="<?php echo e(route('home')); ?>" class="mr-6">Home</a>
-        <a href="<?php echo e(route('blog')); ?>" class="mr-6">Blog</a>
+        <a href="<?php echo e(route('home')); ?>"    class="mr-6">Home</a>
+        <a href="<?php echo e(route('blog')); ?>"    class="mr-6">Blog</a>
         <a href="<?php echo e(route('contact')); ?>" class="mr-6">Contact</a>
         <?php if(auth()->guard()->guest()): ?>
-            <a href="<?php echo e(route('login')); ?>" class="mr-6">Login</a>
+            <a href="<?php echo e(route('login')); ?>"    class="mr-6">Login</a>
             <a href="<?php echo e(route('register')); ?>" class="mr-6">Register</a>
         <?php else: ?>
-            <a href="<?php echo e(route('logout')); ?>" class="mr-6" 
+            <a href="<?php echo e(route('logout')); ?>"     class="mr-6" 
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" method="POST" action="<?php echo e(route('logout')); ?>" style="display:none"><?php echo csrf_field(); ?></form>

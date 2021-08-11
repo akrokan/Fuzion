@@ -4,7 +4,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes([]); ?>
-<?php var_dump($post->comments); ?>
+
     <div class="max-w-prose mx-auto">
         <article>
             <h1><?php echo e($post->title); ?></h3>

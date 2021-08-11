@@ -6,8 +6,8 @@
 <?php $component->withAttributes([]); ?>
 
     <div class="max-w-prose mx-auto">
-    <?php if($posts): ?>
-        <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php if($posts ?? ''): ?>
+        <?php $__currentLoopData = $posts ?? ''; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <article class="py-2">
             <h1><a href="<?php echo e(url('blog/' .$post->slug)); ?>"><?php echo e($post->title); ?></a></h1>
             <?php echo e(Illuminate\Mail\Markdown::parse(Str::limit($post->content, 300, $end='<a href="#">...</a>'))); ?>

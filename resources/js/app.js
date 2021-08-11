@@ -24,3 +24,28 @@ while(hr = document.querySelector('hr')) {
   center.appendChild(content);
   hr.replaceWith(center);  
 }
+
+/*
+  Block all link default behaviour
+*/
+$("a").click(function(event) {
+//  event.preventDefault();
+});
+/*
+$(".nav-item").click(function(){
+  $.get(
+    '/blog', // Le fichier cible côté serveur.
+    'false', // Nous utilisons false, pour dire que nous n'envoyons pas de données.
+//    nom_fonction_retour, // Nous renseignons uniquement le nom de la fonction de retour.
+    'json' // Format des données reçues.
+  );
+});
+*/
+
+$('.nav-item').click(function (event) {
+    // Avoid the link click from loading a new page
+    event.preventDefault();
+    console.log('clicked');
+    // Load the content from the link's href attribute
+    $('.content').load($(this).attr('href'));
+});
